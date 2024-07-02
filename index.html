@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pankaj Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f9d827628d.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1>Pankaj Kumar</h1>
+                <!-- <img src="images/logo.png" class="logo"> -->
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Services">Services</a></li>
+                    <li><a href="#Portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Hello, It,s me</p>
+                <h1><span>Pankaj</span> Kumar<br>And I m a <span class="text"></span></h1>
+                <a href="#about" class="btn-box">More About Me</a>
+            </div>
+        </div>
+    </div>
+    <!------------------Flying text animation --------------->
+    <section>
+        <p class="text5" style="white-space: pre-line; line-height: 2.5;">
+            I am Pankaj Kumar, an aspiring Software Engineer, with a passion for Research and Development,
+            currently exploring the intersection of Art and Technology.
+        </p>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const text5 = document.querySelector('.text5');
+            text5.innerHTML = text5.textContent.replace(/\S/g, "<span>$&</span>");
+    
+            const animation = anime.timeline({
+                targets: '.text5 span',
+                easing: 'easeInOutExpo',
+                loop: true
+            });
+    
+            animation
+                .add({
+                    rotate: function() {
+                        return anime.random(-360, 360)
+                    },
+                    translateX : function(){
+                        return anime.random(-500,500)
+                    },
+                    translateY : function(){
+                        return anime.random(-500,500)
+                    },
+                    duration :5000,
+                    delay : anime.stagger(20),
+                })
+    
+                .add({
+                    rotate :0,
+                    translateX : 0,
+                    translateY: 0,
+                    duration :5000,
+                    delay : anime.stagger(20),
+                });
+        });
+    </script>
+    
+    
+    <!-------------------------about-------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="photo2.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About <span>Me</span></h1>
+                    <p>Embarking from Chandigarh University as an MCA graduate,
+                         I now stand in Noida, seeking avenues to contribute my expertise.
+                          Proficient in Java, C++, JavaScript, and MySQL, I delve into Spring Boot,
+                           Hibernate, and React.JS, crafting dynamic solutions. With HTML, CSS, and
+                            Bootstrap, I sculpt immersive web experiences. Git and GitHub facilitate
+                             collaborative endeavors. Eager to merge skill with opportunity,
+                              I await the canvas to paint the future of technology.</p>
+
+                         <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                            <p class="tab-links" onclick="opentab('certificate')">Certificate</p>
+                         </div>
+                         <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Programming Languages</span><br>Java, SQL, C++, JavaScript<br>Data Structure and Algorithm</li>
+                                <li><span>Framework</span><br>Spring Boot, Collection, React.JS, Hibernate</li>
+                                <li><span>Web Technologies</span><br>HTML, CSS, BootStrap</li>
+                                <li><span>VCS(Version Control System)</span><br>Git & Github</li>
+                            </ul>
+                         </div>
+                         <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>Post – Graduation (MCA) 2021 - 2023</span><br>Chandigarh University, Punjab</li>
+                                <li><span>Graduation (BCA) 2017 - 2020</span><br>Lalit Narayan Mishra Institute of Economic Development and Social
+                                    Change, Patna</li>
+                                <li><span>12th (2015 - 2017)</span><br>Shivshankar singh govt. high school, Raghunathpur Ramgadhwa</li>
+                                <li><span>10th (2015)</span><br>Delhi public school, Jubilee, Motihari</li>
+                            </ul>
+                         </div>
+                         <div class="tab-contents" id="certificate">
+                            <ul>
+                                <li><span>July 2023</span><br>Full Stack Java developer – Java + JSP + Restful WS + Spring.</li>
+                                <li><span>October 2023</span><br>FrontEnd - Bootcamp, To build a Personal website (5days)</li>
+                            </ul>
+                         </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!--------------------Services---------------------->
+
+<div id="Services">
+    <div class="container">
+        <h1 class="sub-title">My <span>Services</span></h1>
+        <div class="services-list">
+            <div class="light">
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Web design is the art of creating visually appealing and user-friendly websites. 
+                    It involves layout, color, typography, and navigation to enhance user experience 
+                    and effectively convey a website's purpose.</p>
+                     <a href="#"></a>
+            </div>
+            <div class="light">
+                <i class="fa-sharp fa-solid fa-crop-simple"></i>
+                <h2>Java Developer</h2>
+                <p>Developed a robust software using Java, showcasing expertise in programming and problem-solving.
+                     The application demonstrates proficiency in Java development, emphasizing functionality, efficiency,
+                      and successful software creation.</p>
+                     <a href="#"></a>
+            </div>
+            <div class="light">
+                <i class="fa-brands fa-app-store"></i>
+                <h2> UI/UX design</h2>
+                <p>Crafted an intuitive UI/UX design, showcasing proficiency in user-centered design 
+                    principles. Demonstrated expertise in creating visually appealing interfaces, 
+                    prioritizing user experience, and ensuring seamless interaction within the software.</p>
+                     <a href="#"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-----------------------Portfolio---------------------------------------->
+<div id="Portfolio">
+    <div class="container">
+        <h1 class="sub-title">My <span>Work</span></h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="work-1.png">
+                <div class="layer">
+                    <h3>Employee management system</h3>
+                    <p>The Employee Management System is a robust software application developed using Java and Swing framework for graphical interface and for the database we have used MySQL. This project was developed in IntelliJ IDE. In this project, we can store employee details like name, their job ID, contact number, and city.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="work-2.png">
+                <div class="layer">
+                    <h3>Car rental WebApp</h3>
+                    <p>This project is designed to be used by a car rental company specializing in renting cars to customers. It is an online system through which customers can view available cars, register, and book cars.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="work-3.png">
+                <div class="layer">
+                    <h3>Online Shopping WebApp</h3>
+                    <p>Build an online shopping website using HTML for structure, CSS for design, and Node.js for server-side functionality. Combine front-end and back-end technologies to create a seamless, interactive e-commerce platform.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#contact" class="btn">For more, Contact Me</a>
+    </div>
+</div>
+
+
+<!-----------------Contact------------------------------------>
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact <span>Me</span></h1>
+                <p><i class="fa-solid fa-paper-plane"></i> pankajword@gmail.com</p>
+                <p><i class="fa-sharp fa-solid fa-square-phone"></i> +91 9122530854</p>
+                <p><i class="fa-solid fa-location-pin"></i> Sector - 62, Noida</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/pankajword"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://github.com/Pankajword?tab=repositories"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/pankajword/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/pankaj-kumar-6b0b431a5/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://hackerrank.com/pankajword"><i class="fa-brands fa-hackerrank"></i></a>
+                </div>
+                <a href="my-cv.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>copyright © Developed by <i class="fa-solid fa-heart"></i> Pankaj Kumar</p>
+    </div>
+</div>
+
+
+
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+
+    </script>
+
+    <script>
+        var sidemeu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemeu.style.right = "0";
+        }
+        function closemenu(){
+            sidemeu.style.right = "-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzOKutRFoiIYVKcbXEb_KzfY7BhglefmTcQijBex07pdp_Dbu3nsxO4Mrqtw5H-asWI/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML =  ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+      <script>
+        var typed = new Typed(".text", {
+         strings: ["Frontend Developer", "Java Developer", "Web Developer"],
+        typeSpeed: 100,
+         backSpeed: 100,
+         backDelay: 1000,
+         loop: true
+});
+      </script>
+      <script src="scrollreveal.min.js"></script> -->
+      <script src="main.js"></script>
+</body>
+</html>
